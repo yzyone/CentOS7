@@ -1,4 +1,4 @@
-﻿﻿# Centos7.5下源码编译安装gcc-8.2.0
+﻿﻿# Centos7.5下源码编译安装gcc-8.3.0
 
 Centos7.5yum安装的默认gcc版本为4.8.5，如果需要使用gcc的最新特性，需要源码安装gcc最新版。本文经过实际检测过。
 
@@ -16,14 +16,14 @@ yum install -y gcc gcc-c++ gcc-gnat libgcc libgcc.i686 glibc-devel bison flex te
 
 ```
 cd /usr/local/src
-wget http://ftp.gnu.org/gnu/gcc/gcc-8.2.0/gcc-8.2.0.tar.xz
-tar -xJvf gcc-8.2.0.tar.xz
+wget http://ftp.gnu.org/gnu/gcc/gcc-8.3.0/gcc-8.3.0.tar.xz
+tar -xJvf gcc-8.3.0.tar.xz
 ```
 
 ##### 3、提前手动下载依赖库（节省步骤4时间）
 
 ```
-cd /usr/local/src/gcc-8.2.0
+cd /usr/local/src/gcc-8.3.0
 wget http://ftp.gnu.org/gnu/gmp/gmp-6.1.0.tar.xz
 wget http://ftp.gnu.org/gnu/mpc/mpc-1.0.3.tar.gz
 wget http://ftp.gnu.org/gnu/mpfr/mpfr-3.1.4.tar.xz
@@ -38,7 +38,7 @@ tar -xJvf isl-0.18.tar.xz
 ##### 4、检查和下载gcc依赖库
 
 ```
-cd /usr/local/src/gcc-8.2.0
+cd /usr/local/src/gcc-8.3.0
 ./contrib/download_prerequisites
 ```
 
@@ -46,7 +46,7 @@ cd /usr/local/src/gcc-8.2.0
 ##### 5、编译安装依赖包
 
 ```
-cd /usr/local/src/gcc-8.2.0
+cd /usr/local/src/gcc-8.3.0
 cd gmp-6.1.0
 ./configure --prefix=/usr/local/gmp-6.1.0
 make && make install
@@ -99,9 +99,9 @@ ldconfig -v
 ##### 7、创建编译目录
 
 ```
-cd /usr/local/src/gcc-8.2.0
+cd /usr/local/src/gcc-8.3.0
 mkdir build && cd build
-../configure --prefix=/usr/local/gcc-8.2.0 --with-gmp=/usr/local/gmp-6.1.0 --with-mpfr=/usr/local/mpfr-3.1.4 --with-mpc=/usr/local/mpc-1.0.3 --enable-checking=release --enable-languages=c,c++ --disable-multilib
+../configure --prefix=/usr/local/gcc-8.3.0 --with-gmp=/usr/local/gmp-6.1.0 --with-mpfr=/usr/local/mpfr-3.1.4 --with-mpc=/usr/local/mpc-1.0.3 --enable-checking=release --enable-languages=c,c++ --disable-multilib
 make -j 4 && make install
 ```
 备注： 4为当前服务器每颗物理CPU中的核心数，以实际为准。
@@ -115,7 +115,7 @@ vim /etc/profile
 结尾加入一行
 
 ```
-export PATH=/usr/local/gcc-8.2.0/bin:$PATH
+export PATH=/usr/local/gcc-8.3.0/bin:$PATH
 ```
 
 保存退出，然后输入 exit 命令退出当前终端窗口。
