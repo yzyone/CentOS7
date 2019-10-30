@@ -1,21 +1,21 @@
-#Centos7°²×°Redis
+#Centos7å®‰è£…Redis
 
-Ô­ÎÄÁ´½Ó: https://www.jianshu.com/p/f4e27cf54f60
-Óà±ş¸ß±Ê¼Ç
+åŸæ–‡é“¾æ¥: https://www.jianshu.com/p/f4e27cf54f60
+ä½™ç‚³é«˜ç¬”è®°
 
 
-Ò»¡¢°²×°redis 
+ä¸€ã€å®‰è£…redis 
 
         yum install redis
 
-        ³öÏÖÑ¡Ôñ¾ÍÒ»Ö± y
+        å‡ºç°é€‰æ‹©å°±ä¸€ç›´ y
 
-°²×°Íê³É
-¶ş¡¢Æô¶¯redis·şÎñ 
+å®‰è£…å®Œæˆ
+äºŒã€å¯åŠ¨redisæœåŠ¡ 
 
        /bin/systemctl  start  redis.service
 
-Èı¡¢²âÊÔredis
+ä¸‰ã€æµ‹è¯•redis
 
        redis-cli
 
@@ -23,45 +23,45 @@
 
        get  'test'
 
-²âÊÔredis
-ËÄ¡¢ĞŞ¸ÄÅäÖÃ
+æµ‹è¯•redis
+å››ã€ä¿®æ”¹é…ç½®
 
-        1.ÕÒÅäÖÃÎÄ¼ş 
+        1.æ‰¾é…ç½®æ–‡ä»¶ 
 
             whereis  redis.config     
 
-ÕÒÅäÖÃÎÄ¼ş
-       2.´ò¿ªÅäÖÃÎÄ¼ş  
+æ‰¾é…ç½®æ–‡ä»¶
+       2.æ‰“å¼€é…ç½®æ–‡ä»¶  
 
            vi /etc/redis.conf
 
 
 
-ÔÊĞíÍâ²¿·ÃÎÊ
-        ÔÊĞíÔ¶³Ì·ÃÎÊ
+å…è®¸å¤–éƒ¨è®¿é—®
+        å…è®¸è¿œç¨‹è®¿é—®
 
         #bind 127.0.0.1
 
-        ¶Ë¿ÚºÅ
+        ç«¯å£å·
 
         port 8888
 
-        ÉèÖÃÃÜÂë
+        è®¾ç½®å¯†ç 
 
         requirepass FA86D6708231EACC2EC22F0_20190624
 
-        ¹Ø±Õ±£»¤
+        å…³é—­ä¿æŠ¤
 
         protected-mode no
 
-          ESC  :wq  ±£´æ
+          ESC  :wq  ä¿å­˜
 
          /bin/systemctl  restart  redis.service
 
-³£ÓÃÃüÁî
+å¸¸ç”¨å‘½ä»¤
 
-    Æô¶¯  /bin/systemctl  start  redis.service
+    å¯åŠ¨  /bin/systemctl  start  redis.service
 
-    ÖØÆô  /bin/systemctl  restart  redis.service
+    é‡å¯  /bin/systemctl  restart  redis.service
 
-    ¹Ø±Õ  /bin/systemctl  stop  redis.service
+    å…³é—­  /bin/systemctl  stop  redis.service
