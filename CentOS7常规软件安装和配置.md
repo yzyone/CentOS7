@@ -89,7 +89,7 @@ CentOS7常规软件安装和配置
 	#表示用于向外连接的端口范围,缺省情况下很小：32768到61000
 	net.ipv4.ip_local_port_range = 10000 65000
 
-如果是普通用户在目录中/etc/sysctl.d/新增配置文件
+还可以在目录中/etc/sysctl.d/新增配置文件
 
 保存并退出文件。
 执行下面的命令来使设置生效。
@@ -125,10 +125,45 @@ CentOS7常规软件安装和配置
 	*                soft    nofile          655350
 	*                hard    nofile          655350
 
-如果是普通用户，还需要将 /etc/security/limits.d/20-nproc.conf 修改或注释
+还可以在/etc/security/limits.d/20-nproc.conf 修改或注释
 
 	*          soft    nproc     655350
 	root       soft    nproc     unlimited
+
+用户还可以修改/etc/systemd/system.conf 或者 /etc/systemd/user.conf
+
+    [Manager]
+    #LogLevel=info
+    #LogTarget=console
+    #LogColor=yes
+    #LogLocation=no
+    #SystemCallArchitectures=
+    #TimerSlackNSec=
+    #DefaultTimerAccuracySec=1min
+    #DefaultStandardOutput=inherit
+    #DefaultStandardError=inherit
+    #DefaultTimeoutStartSec=90s
+    #DefaultTimeoutStopSec=90s
+    #DefaultRestartSec=100ms
+    #DefaultStartLimitInterval=10s
+    #DefaultStartLimitBurst=5
+    #DefaultEnvironment=
+    #DefaultLimitCPU=
+    #DefaultLimitFSIZE=
+    #DefaultLimitDATA=
+    #DefaultLimitSTACK=
+    DefaultLimitCORE=infinity
+    #DefaultLimitRSS=
+    DefaultLimitNOFILE=655350
+    #DefaultLimitAS=
+    DefaultLimitNPROC=655350
+    #DefaultLimitMEMLOCK=
+    #DefaultLimitLOCKS=
+    #DefaultLimitSIGPENDING=
+    #DefaultLimitMSGQUEUE=
+    #DefaultLimitNICE=
+    #DefaultLimitRTPRIO=
+    #DefaultLimitRTTIME=
 
 最后，重启生效
 
