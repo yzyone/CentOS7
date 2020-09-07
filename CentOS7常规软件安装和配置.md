@@ -253,3 +253,24 @@ CentOS7常规软件安装和配置
 
     #systemctl stop ip6tables
     #systemctl disable ip6tables
+
+七、关闭SELinux
+
+查看是否开启了SELinux
+
+	sestatus -v
+
+可以通过修改SELinux的配置开启或关闭它：
+
+	vim /etc/selinux/config
+
+关闭SELinux
+
+	SELINUX=disabled
+
+开启
+
+	SELINUX=enforcing
+
+修改完成以后重启系统
+
