@@ -167,10 +167,13 @@ CentOS7常规软件安装和配置
 
 最后，重启生效
 
-    netstat -lnpt
     reboot
 
 五、网络配置
+
+查询监听端口对应的程序
+
+    netstat -lnpt
 
 1、配置文件
 
