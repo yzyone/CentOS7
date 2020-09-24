@@ -1,0 +1,4 @@
+
+启动socks5代理
+./proxy socks -t tcp -p "0.0.0.0:52830" --daemon
+./proxy socks -t tcp -p "0.0.0.0:52850" --daemon
