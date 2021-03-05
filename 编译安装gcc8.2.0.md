@@ -15,6 +15,8 @@ gcc version 4.8.5 20150623 (Red Hat 4.8.5-44) (GCC)
 
 原文链接：[https://www.jianshu.com/p/444169a3721a](https://www.jianshu.com/p/444169a3721a)
 
+参考链接：[https://blog.csdn.net/chenjia6605/article/details/82757568](https://blog.csdn.net/chenjia6605/article/details/82757568)
+
 ##### 1、yum 安装依赖包
 
 ```
