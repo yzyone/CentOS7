@@ -1,6 +1,42 @@
 
 # Centos7.5安装Keepalived #
 
+一、基础环境
+
+|系统版本	|nginx版本	|keepalived版本	|ip	|作用|
+|CentOS Linux release 7.5.1804 (Core)	|nginx/1.16.1	|keepalived-2.0.18	|10.1.1.31	|master|
+|CentOS Linux release 7.5.1804 (Core)	|nginx/1.16.1	|keepalived-2.0.18	|10.1.1.32	|slave|
+
+VIP 10.1.1.111
+
+二、安裝nginx
+
+安裝nignx
+
+    yum install nginx -y
+
+修改nginx配置文件
+
+master
+
+    echo 'this is master 31' > /usr/share/nginx/html/index.html
+
+slave
+
+    echo 'this is slave 32' >  /usr/share/nginx/html/index.html 
+
+启动nginx
+
+    systemctl start nginx 
+
+测试nginx启动
+
+    curl localhost
+    
+    this is master
+
+三、安装keepalived
+
 1、 创建依赖环境
 
     yum -y install openssl-devel gcc gcc-c++
