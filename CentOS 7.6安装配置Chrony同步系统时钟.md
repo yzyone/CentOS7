@@ -98,6 +98,8 @@ image.png
     # systemctl start chronyd.service
     # systemctl status chronyd.service
 
+![](./Chrony/1547918851552669.png)
+
 显示如下：
 
 ```
@@ -123,6 +125,8 @@ Aug 05 14:13:33 beijing101 chronyd[28854]: Selected source 120.25.115.20
 
     # ss -tunlp | grep chronyd
 
+![](./Chrony/1547918859283531.png)
+
 显示如下：
 
 ```
@@ -136,6 +140,8 @@ udp    UNCONN     0      0       ::1:323                  :::*                  
 7、查看时间同步源：
 
     # chronyc sources -v
+
+![](./Chrony/1547918881664190.png)
 
 显示如下：
 
@@ -162,6 +168,8 @@ MS Name/IP address         Stratum Poll Reach LastRx Last sample
 
 	# chronyc sourcestats -v
 
+![](./Chrony/1547918892133384.png)
+
 显示如下：
 
 ```
@@ -183,7 +191,7 @@ Name/IP Address            NP  NR  Span  Frequency  Freq Skew  Offset  Std Dev
 
 备注：可直接输入命令chronyc进入交互式模式
 
-image.png
+![](./Chrony/1547918899627048.png)
 
 常用指令说明：
 
@@ -244,11 +252,11 @@ image.png
     # systemctl start chronyd.service
     # systemctl status chronyd.service
 
-image.png
+![](./Chrony/1547918959449956.png)
 
     # ss -tunlp | grep chronyd
 
-image.png
+![](./Chrony/1547918965111114.png)
 
     # systemctl enable chronyd.service
 
@@ -256,13 +264,13 @@ image.png
 
     # chronyc sources -v
 
-image.png
+![](./Chrony/1547918981480453.png)
 
 8、查看时间同步源状态：
 
     # chronyc sourcestats -v
 
-image.png
+![](./Chrony/1547918996660249.png)
 
 
 
@@ -285,7 +293,7 @@ image.png
 
     # date
 
-image.png
+![](./Chrony/1547919018971832.png)
 
 5、安装ntpdate：
 
@@ -299,18 +307,24 @@ image.png
 
 7、测试定时任务：将时间调慢，观察服务器时间是否会自动同步
 
-image.png
+![](./Chrony/1547919080531999.png)
 
 8、检查3台服务器的时间是否一致：
 
-image.png
+![](./Chrony/1547919098685804.png)
 
-image.png
+![](./Chrony/1547919101885314.png)
 
-image.png
+![](./Chrony/1547919105670302.png)
 
 
 
 六、Windows 10自动定期同步阿里云Windows公共NTP服务器：
 
 Win + r --> control panel --> 查看方式选择“类别”--> 时钟和区域 --> 日期和时间 --> Internet时间 --> 更改设置 --> 输入阿里云Windows公共NTP服务器地址time.pool.aliyun.com --> 立即更新
+
+![](./Chrony/1547919114272370.png)
+
+![](./Chrony/1547919119887663.png)
+
+![](./Chrony/1547919125441804.png)
