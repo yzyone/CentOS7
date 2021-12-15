@@ -12,6 +12,8 @@
 
 将阿里云的Centos-7.repo下载保存到该目录
 
+	wget http://mirrors.aliyun.com/repo/Centos-7.repo
+
     # sed -i 's/$releasever/7/g' Centos-7.repo
 
 ![](./docker/0da37be7340f6478feaa490afd3e21c2bad6b5dd.jpg)
