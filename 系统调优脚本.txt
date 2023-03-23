@@ -1,0 +1,36 @@
+#注释原有的nofile行
+sed -i "/nofile/s/^/#/g" /etc/security/limits.conf
+#注释原有的nproc行
+sed -i "/nproc/s/^/#/g" /etc/security/limits.conf
+
+echo "* soft nofile 1048576" >>/etc/security/limits.conf
+echo "* hard nofile 1048576" >>/etc/security/limits.conf
+
+echo "root soft nofile 1048576" >>/etc/security/limits.conf
+echo "root hard nofile 1048576" >>/etc/security/limits.conf
+
+echo "* soft nproc 65535" >>/etc/security/limits.conf
+echo "* hard nproc 65535" >>/etc/security/limits.conf
+
+echo "root soft nproc unlimited" >>/etc/security/limits.conf
+echo "root hard nproc unlimited" >>/etc/security/limits.conf
+
+#注释原有的nproc行
+sed -i "/nproc/s/^/#/g" /etc/security/limits.d/90-nproc.conf
+#注释原有的nofile行
+sed -i "/nofile/s/^/#/g" /etc/security/limits.d/90-nproc.conf
+
+echo "* soft nofile 1048576" >>/etc/security/limits.d/90-nproc.conf
+echo "* hard nofile 1048576" >>/etc/security/limits.d/90-nproc.conf
+
+echo "root soft nofile 1048576" >>/etc/security/limits.d/90-nproc.conf
+echo "root hard nofile 1048576" >>/etc/security/limits.d/90-nproc.conf
+
+echo "* soft nproc 65535" >>/etc/security/limits.d/90-nproc.conf
+echo "* hard nproc 65535" >>/etc/security/limits.d/90-nproc.conf
+
+echo "root soft nproc unlimited" >>/etc/security/limits.d/90-nproc.conf
+echo "root hard nproc unlimited" >>/etc/security/limits.d/90-nproc.conf
+
+echo "* soft memlock unlimited" >>/etc/security/limits.d/90-nproc.conf
+echo "* hard memlock unlimited" >>/etc/security/limits.d/90-nproc.conf
