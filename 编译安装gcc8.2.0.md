@@ -178,5 +178,10 @@ gcc -v
     make[1]: 离开目录“/usr/local/src/gcc-8.3.0/build”
     make: *** [all] 错误2
 
+如果找不到gmp.h和libgmp,单独编译一次默认安装即可。（不要带--prefix=/usr/local/gmp-6.1.0）
 
-
+```
+cd gmp-6.1.0
+./configure
+make && make install
+```
